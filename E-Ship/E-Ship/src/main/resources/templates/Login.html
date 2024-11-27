@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>E-Ship Portal | Sign In</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="title">E-Ship Portal</h1>
+    <h2 class="subtitle">Sign In</h2>
+    <form th:action="@{/api/login}" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" th:value="${username}" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Sign In</button>
+    </form>
+
+    <p class="forgot-password">Forgot Password?</p>
+    <p class="signup">Don't have an account? <a href="SignUp.html">Sign Up</a></p>
+
+</div>
+</body>
+</html>

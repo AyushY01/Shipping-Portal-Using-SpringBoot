@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="/css/style2.css">
+</head>
+<body>
+<!-- Wrapper for centering the content -->
+<div class="form-container">
+    <h2>Signup Form</h2>
+
+    <!-- Form using Thymeleaf syntax to bind the fields -->
+    <form action="#" th:action="@{/api/signup}" th:object="${signup}" method="post">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" th:field="*{Username}" placeholder="Enter username" required />
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" th:field="*{Email}" placeholder="Enter email" required />
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" th:field="*{Password}" placeholder="Enter password" required />
+        </div>
+        <div>
+            <label for="confirmpassword">Confirm Password:</label>
+            <input type="password" id="confirmpassword" th:field="*{ConfirmPassword}" placeholder="Confirm Password" required />
+        </div>
+        <!-- Roles field -->
+        <div>
+            <label for="roles">Roles:</label>
+            <input type="text" id="roles" th:field="*{Roles}" placeholder="Enter roles (e.g. user, admin)" required />
+        </div>
+        <div>
+            <button type="submit">Sign Up</button>
+        </div>
+    </form>
+
+    <div>
+        <p th:if="${message != null}" th:text="${message}"></p>
+    </div>
+</div>
+</body>
+</html>

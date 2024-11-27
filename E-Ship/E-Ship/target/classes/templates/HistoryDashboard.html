@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/style3.css"> <!-- Link to your CSS file -->
+</head>
+
+<body>
+<!-- Admin Dashboard Header -->
+<header>
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Order History</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main>
+    <div class="container">
+        <h2>Order History</h2>
+
+        <!-- Order History Table -->
+        <table class="order-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Contact Number</th>
+                <th>Address</th>
+                <th>Start City</th>
+                <th>Destination City</th>
+                <th>Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Thymeleaf iteration to populate the order history dynamically -->
+            <tr th:each="data : ${users}">
+                <td th:text="${data.Id}"></td>
+                <td th:text="${data.Name}"></td>
+                <td th:text="${data.ContactNumber}"></td>
+                <td th:text="${data.Address}"></td>
+                <td th:text="${data.StartCity}"></td>
+                <td th:text="${data.DestinationCity}"></td>
+                <td th:text="${data.Amount}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>E-Ship</p>
+    </div>
+</footer>
+</body>
+
+</html>
